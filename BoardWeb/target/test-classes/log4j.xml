@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.springbooks.biz">
+	<logger name="com.springbook.bi">
 		<level value="info" />
 	</logger>
 	
