@@ -3,7 +3,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="tv" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destroyMethod"></bean>
+	<bean id="tv" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destroyMethod">
+		<constructor-arg ref="sony"></constructor-arg>
+	</bean>
+	
+	<bean id="sony" class="polymorphism.SonySpeaker"></bean>
 	
 	<import resource="context-datasource.xml" />
 	<import resource="context-transaction.xml" />
