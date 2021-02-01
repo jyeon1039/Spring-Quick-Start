@@ -136,7 +136,7 @@ public class TVUser {
    <bean> 등록된 클래스들을 객체 생성하는 즉시 로딩(pre-loading) 방식으로 동작한다. 그리고 웹 애플리케이션 개발도 지원하므로 대부분 스프링 프로젝트는 ApplicationContext 유형의
       컨테이너를 이용한다.
       
-|<center>구현 클래스</center>|<center>기능</center>|
+|구현 클래스|기능|
 |:---|:---|
 |GenericXmlApplicationContext|파일 시스템이나 클래스 경로에 있는 XML 설정 파일을 로딩하여 구동하는 컨테이너|
 |XmlWebApplicationContext| 웹 기반의 스프링 애플리케이션을 개발할 때 사용하는 컨테이너|
