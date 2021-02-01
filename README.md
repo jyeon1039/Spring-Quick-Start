@@ -130,9 +130,9 @@ public class TVUser {
 ## 1.3 스프링 컨테이너 
 ### 1.3.1. 스프링 컨테이너의 종류
 * 스프링에서는 BeanFactory와 이를 상속한 ApplicationContext 두 가지 유형의 컨테이너를 제공한다. 
-* BeanFactory는 스프링 설정 파일에 등록된 <bean> 객체를 생성하고 관리하는 가장
+* <b>BeanFactory</b>는 스프링 설정 파일에 등록된 <bean> 객체를 생성하고 관리하는 가장
    기본적인 컨테이너만 제공한다. 그리고 컨테이너가 구동될 때 <bean> 객체를 생성하는 것이 아니라, 클라이언트의 요청(Lookup) 에 의해서만 <bean> 객체가 생성되는 지연 로딩(Lazy Loading) 방식을 사용한다. 따라서 일반적인 스프링 프로젝트에서 BeanFactory를 사용할 일은 없다.
-* ApplicationContext는 BeanFactory가 제공하는 <bean> 객체 관리 기능 외에도 트랜잭션 관리나 메시지 기반의 다국어 처리 등 다양한 기능을 지원한다. 또한, 컨테이너가 구동되는 시점에 
+* <b>ApplicationContext</b>는 BeanFactory가 제공하는 <bean> 객체 관리 기능 외에도 트랜잭션 관리나 메시지 기반의 다국어 처리 등 다양한 기능을 지원한다. 또한, 컨테이너가 구동되는 시점에 
    <bean> 등록된 클래스들을 객체 생성하는 즉시 로딩(pre-loading) 방식으로 동작한다. 그리고 웹 애플리케이션 개발도 지원하므로 대부분 스프링 프로젝트는 ApplicationContext 유형의
       컨테이너를 이용한다.
       
