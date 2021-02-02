@@ -4,8 +4,13 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="tv" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destroyMethod">
+		<!-- 
+		* 생성자 인젝션 사용
 		<constructor-arg index="0" ref="apple"></constructor-arg>
 		<constructor-arg index="1" value="2700000"></constructor-arg>
+		-->
+		<property name="speaker" ref="apple"></property>
+		<property name="price" value="2700000"></property>
 	</bean>
 	
 	<bean id="sony" class="polymorphism.SonySpeaker"></bean>

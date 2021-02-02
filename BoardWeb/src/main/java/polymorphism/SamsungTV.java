@@ -12,6 +12,16 @@ public class SamsungTV implements TV{
 		System.out.println("객체 삭제 전에 처리할 로직 처리...");
 	}
 	
+	public void setSpeaker(Speaker speaker) {
+		System.out.println("===> setSpeaker() 호출");
+		this.speaker = speaker;
+	}
+	
+	public void setPrice(int price) {
+		System.out.println("===> setPrice() 호출");
+		this.price = price;
+	}
+	
 	public SamsungTV() {
 		System.out.println("===> SamsungTV(1) 객체 생성");
 	}
