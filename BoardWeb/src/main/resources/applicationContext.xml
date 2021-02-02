@@ -22,6 +22,7 @@
 	<bean id="sony" class="polymorphism.SonySpeaker"></bean>
 	<bean id="apple" class="polymorphism.AppleSpeaker"></bean>
 	
+	
 	<import resource="context-datasource.xml" />
 	<import resource="context-transaction.xml" />
 </beans>
