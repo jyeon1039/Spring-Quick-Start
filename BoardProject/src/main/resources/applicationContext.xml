@@ -21,24 +21,27 @@
 		<aop:pointcut id="getPointcut" expression="execution(* com.springbook.biz..*Impl.get*(..))"/>
 		
 		<aop:aspect ref="log">
-			<aop:before pointcut-ref="allPointcut" method="printLog" />
+			<aop:before pointcut-ref="getPointcut" method="printLog" />
 		</aop:aspect>
 		
 		<aop:aspect ref="before">
-			<aop:before pointcut-ref="allPointcut" method="beforeLog" />
+			<aop:before pointcut-ref="getPointcut" method="beforeLog" />
 		</aop:aspect>
 		
 		<aop:aspect ref="afterReturning">
-			<aop:after-returning pointcut-ref="allPointcut" method="afterLog" />
+			<aop:after-returning pointcut-ref="getPointcut" method="afterLog" returning="returnObj"/>
 		</aop:aspect>
 		
-		<!-- <aop:aspect ref="afterThrowing">
-			<aop:after-throwing pointcut-ref="allPointcut" method="exceptionLog" />
-		</aop:aspect> -->
+		<!-- 
+		<aop:aspect ref="afterThrowing">
+			<aop:after-throwing pointcut-ref="allPointcut" method="exceptionLog" throwing="exceptObj" />
+		</aop:aspect> 
+		-->
 		
 		<aop:aspect ref="around">
-			<aop:around pointcut-ref="allPointcut" method="aroundLog" />
+			<aop:around pointcut-ref="getPointcut" method="aroundLog" />
 		</aop:aspect>
+		
 	</aop:config>
 
 </beans>
