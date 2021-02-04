@@ -17,7 +17,7 @@ public class BoardDAO {
 	private PreparedStatement stmt = null;
 	private ResultSet rs = null;
 	
-	private final String BOARD_INSET = "insert into board(seq, title, writer, content) values((select nvl(max(seq),0)+1"
+	private final String BOARD_INSERT = "insert into board(seq, title, writer, content) values((select nvl(max(seq),0)+1"
 			+ " from board),?,?,?)";
 	private final String BOARD_UPDATE = "update board set title=?, content=?, where seq=?";
 	private final String BOARD_DELETE = "delete board where seq=?";
@@ -29,7 +29,7 @@ public class BoardDAO {
 		System.out.println("===> jDBC로 insertBoard() 기능 처리");
 		try{
 			conn = JDBCUtil.getConnection();
-			stmt = conn.prepareStatement(BOARD_INSET);
+			stmt = conn.prepareStatement(BOARD_INSERT);
 			stmt.setString(1, vo.getTitle());
 			stmt.setString(2, vo.getWriter());
 			stmt.setString(3,  vo.getContent());
