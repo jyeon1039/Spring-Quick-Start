@@ -16,14 +16,18 @@
 		</h3>
 
 		<!-- 검색 시작 -->
-		<form action="getBoardList.jsp" method="post">
+		<form action="getBoardList.do" method="post">
 			<table border="1" cellpadding="0" cellspacing="0" width="700">
 				<tr>
-					<td align="right"><select name="searchCondition">
-							<option value="TITLE">제목
-							<option value="CONTENT">내용
-					</select> <input name="searchKeyword" type="text" /> <input type="submit"
-						value="검색" /></td>
+					<td align="right">
+						<select name="searchCondition">
+							<c:forEach items="${conditionMap }" var="option">
+								<option value="${option.value }"> ${option.key }
+							</c:forEach>
+						</select> 
+						<input name="searchKeyword" type="text" /> 
+						<input type="submit" value="검색" />
+					</td>
 				</tr>
 			</table>
 		</form>
