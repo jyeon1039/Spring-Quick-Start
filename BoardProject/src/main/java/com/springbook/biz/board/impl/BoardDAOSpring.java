@@ -23,6 +23,8 @@ public class BoardDAOSpring{
 	private final String BOARD_DELETE = "delete board where seq=?";
 	private final String BOARD_GET    = "select * from board where seq=?";
 	private final String BOARD_LIST   = "select * from board order by seq desc";
+	private final String BOARD_LIST_T = "select * from board where title like '%'||?||'%' order by seq desc";
+	private final String BOARD_LIST_C = "select * from board where content like '%'||?||'%' order by seq desc";
 	
 	//글 등록
 	public void insertBoard(BoardVO vo) {
@@ -52,7 +54,13 @@ public class BoardDAOSpring{
 	//글 목록 조회
 	public List<BoardVO> getBoardList(BoardVO vo) {
 		System.out.println("===> jDBC로 getBoardList() 기능 처리");
-		return jdbcTemplate.query(BOARD_LIST, new BoardRowMapper());
+		Object[] args = {vo.getSearchKeyword()};
+		if(vo.getSearchCondition().equals("TITLE"))
+			return jdbcTemplate.query(BOARD_LIST_T, args, new BoardRowMapper());
+		else if(vo.getSearchCondition().equals("CONTENT"))
+			return jdbcTemplate.query(BOARD_LIST_C, args, new BoardRowMapper());
+		
+		return null;
 	}
 }
 
